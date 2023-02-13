@@ -21,5 +21,5 @@ A modern and user-friendly to-do application built with React and TypeScript. Th
 3. Install the dependencies: yarn install  
 4. Start the development server: yarn dev  
 5. Access the application in your browser at http://127.0.0.1:5173/  
-##Contributions  
+## Contributions  
 If you would like to contribute to this project, please feel free to submit a pull request. Contributions are always welcome!   
