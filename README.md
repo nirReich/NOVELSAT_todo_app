@@ -11,10 +11,10 @@ A modern and user-friendly to-do application built with React and TypeScript. Th
 *__React Router DOM:__ A library for routing in React.  
 *__Material UI:__ A popular UI library for React with a Material Design look and feel.  
 ##Features  
-*Create and delete tasks with ease.  
-*Mark tasks as complete or incomplete.  
-*filter tasks by keyword.  
-*Responsive design for different screen sizes.  
+* Create and delete tasks with ease.  
+* Mark tasks as complete or incomplete.  
+* filter tasks by keyword.  
+* Responsive design for different screen sizes.  
 ##Getting Started  
 Clone the repository: git clone https://github.com/[your_username]/todo-app.git  
 Navigate to the project directory: cd todo-app  
