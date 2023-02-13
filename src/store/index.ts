@@ -49,9 +49,6 @@ const taskItemsSlice = createSlice({
     OpenModal(state: State, action: { payload: boolean }): void {
       state.openModal = action.payload;
     },
-    openWarningPopper(state: State, action: { payload: boolean }): void {
-      state.openWarningPopper = action.payload;
-    },
   },
 });
 

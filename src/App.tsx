@@ -7,7 +7,6 @@ import BasicModal from "./components/modal/Modal";
 import Form from "./components/form/Form";
 import Footer from "./layout/footer/Footer";
 
-
 function App() {
   return (
     <div className="App">
@@ -19,7 +18,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/finished" element={<Finished />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

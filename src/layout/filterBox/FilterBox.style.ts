@@ -12,20 +12,21 @@ const FilterBox = styled.div`
   margin: 0.5rem auto;
   border-radius: 5px;
   border: 3px solid ${appUtils.colors.warmOrange};
-  width:25%;
+  width: 25%;
 `;
 const FilterInput = styled.input`
-    color: ${appUtils.colors.darkBlue};
-    background-color: ${appUtils.colors.greyWhite};
-    padding: 0.4rem;
-    border-radius: 5px;
-    border: none;
-    &:focus{
-        outline-color:${appUtils.colors.warmOrange};
-    }
-`
+  width: 60%;
+  color: ${appUtils.colors.darkBlue};
+  background-color: ${appUtils.colors.greyWhite};
+  padding: 0.4rem;
+  border-radius: 5px;
+  border: none;
+  &:focus {
+    outline-color: ${appUtils.colors.warmOrange};
+  }
+`;
 const Styled = {
-    FilterBox,
-    FilterInput
+  FilterBox,
+  FilterInput,
 };
 export default Styled;
