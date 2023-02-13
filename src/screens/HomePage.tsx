@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import TaskCard from "../components/card/TaskCard";
 import GridBox from "../layout/gridBox/GridBox";
 import AddTaskIcon from '@mui/icons-material/AddTask';
+import FilterBox from "../layout/filterBox/FilterBox";
 
 const HomePage = () => {
-  const taskItems = useSelector((state: State) => state.taskItems);
+  const taskItems:TodoItem[] = useSelector((state: State) => state.taskItems);
+  const [tasksToShow,setTasksToShow] = useState<TodoItem[]>(taskItems)
+  useEffect(() => {
+    setTasksToShow(taskItems)
+  }, [taskItems])
+  
 
   const renderTodosCards = (taskList: TodoItem[]) => {
     if (taskList.length) {
@@ -29,9 +35,22 @@ const HomePage = () => {
       );
     }
   };
+
+  const filterTaskArray = ( string:string)=>{
+    
+    let filteredList = [...taskItems]
+    if (string.length){
+      filteredList = filteredList.filter((item)=>{
+        return item.title.toLowerCase().includes(string.toLowerCase());
+      });
+    }
+    setTasksToShow(filteredList)
+  };
+
   return (
     <>
-      <GridBox>{renderTodosCards(taskItems)}</GridBox>
+      <FilterBox filter = {filterTaskArray}/>
+      <GridBox>{renderTodosCards(tasksToShow)}</GridBox>
     </>
   );
 };
