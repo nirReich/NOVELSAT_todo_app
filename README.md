@@ -16,10 +16,10 @@ A modern and user-friendly to-do application built with React and TypeScript. Th
 * filter tasks by keyword.  
 * Responsive design for different screen sizes.  
 ## Getting Started  
-Clone the repository: git clone https://github.com/[your_username]/todo-app.git  
-Navigate to the project directory: cd todo-app  
-Install the dependencies: yarn install  
-Start the development server: yarn dev  
-Access the application in your browser at http://localhost:3000/  
-##Contributions  
+1. Clone the repository: git clone https://github.com/[your_username]/todo-app.git  
+2. Navigate to the project directory: cd NOVELSAT_todo_app  
+3. Install the dependencies: yarn install  
+4. Start the development server: yarn dev  
+5. Access the application in your browser at http://127.0.0.1:5173/  
+## Contributions  
 If you would like to contribute to this project, please feel free to submit a pull request. Contributions are always welcome!   
