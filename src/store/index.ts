@@ -26,6 +26,9 @@ const taskItemsSlice = createSlice({
       action.payload.id = appUtils.createUniqueKey();
       action.payload.finished = false;
       state.taskItems.push(action.payload);
+      
+      const taskItems = JSON.stringify(state.taskItems)
+      localStorage.setItem('taskItems', taskItems);
     },
     addFinishedTask(state: State, action: { payload: string }): void {
       const task: TodoItem | undefined = state.taskItems.find(
@@ -40,11 +43,17 @@ const taskItemsSlice = createSlice({
         task.finished = true;
         state.finishedTasks.push(task);
       }
+      const taskItems = JSON.stringify(state.taskItems)
+      localStorage.setItem('taskItems', taskItems);
+      const finishedTasks = JSON.stringify(state.finishedTasks)
+      localStorage.setItem('finishedTasks', finishedTasks);
     },
     removeTask(state: State, action: { payload: string }): void {
       state.finishedTasks = state.finishedTasks.filter((task) => {
         return task.id !== action.payload;
       });
+      const finishedTasks = JSON.stringify(state.finishedTasks)
+      localStorage.setItem('finishedTasks', finishedTasks);
     },
     OpenModal(state: State, action: { payload: boolean }): void {
       state.openModal = action.payload;
