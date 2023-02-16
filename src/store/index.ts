@@ -2,16 +2,10 @@ import { configureStore } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 import appUtils from "../utils";
 
+const jsonInitialState = JSON.stringify(appUtils.initialState);
 const initialState: State = {
-  taskItems: [
-    {
-      title: "Adding a task",
-      description: "Add a new task to your list!",
-      id: "sfdfd2334",
-      finished: false,
-    },
-  ],
-  finishedTasks: [],
+  taskItems: JSON.parse(localStorage.getItem('taskItems') || jsonInitialState ),
+  finishedTasks: JSON.parse(localStorage.getItem('finishedTasks')||"[]"),
   openModal: false,
   openWarningPopper: false,
 };
