@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Styled from "./Modal.style";
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 import { taskActions } from "../../store";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -20,15 +20,15 @@ const style = {
 };
 
 type Props = {
-  children:React.ReactNode
-}
+  children: React.ReactNode;
+};
 
-export default function BasicModal({children}:Props) {
+export default function BasicModal({ children }: Props) {
   const openModal = useSelector((state: State) => state.openModal);
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <>
       <Modal
         open={openModal}
         onClose={() => dispatch(taskActions.OpenModal(false))}
@@ -36,16 +36,16 @@ export default function BasicModal({children}:Props) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={Styled.modal}>
-          <Typography>
-            <Button onClick={() => dispatch(taskActions.OpenModal(false))}>
-              <CloseIcon/>
-            </Button>
-          </Typography>
+          <Styled.ModalContainer>
+          <Button onClick={() => dispatch(taskActions.OpenModal(false))} sx={{}}>
+            <CloseIcon />
+          </Button>
+          </Styled.ModalContainer>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             {children}
           </Typography>
         </Box>
       </Modal>
-    </div>
+    </>
   );
 }

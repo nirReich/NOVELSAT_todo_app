@@ -69,7 +69,7 @@ const Form = () => {
 
   return (
     <Styled.Form>
-      <Styled.FormTitle>Create Task</Styled.FormTitle>
+      <Styled.FormTitle>Create new task</Styled.FormTitle>
       <Styled.FormInstructions isError={formError.type !== "noError"}>
         {formError.massage}
       </Styled.FormInstructions>
@@ -104,6 +104,7 @@ const Form = () => {
           }
         />
       </Styled.FormSection>
+
       <Styled.FormButton
         onClick={() => {
           handleStateDispatch(state);

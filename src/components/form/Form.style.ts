@@ -4,20 +4,28 @@ import appUtils from "../../utils";
 const Form = styled.div`
   position: relative;
   bottom: 1.5rem;
-  text-align: center;
   color: black;
+  border: 1px solid black;
+  padding: 1rem;
   border-radius: 5px;
 `;
-const FormInput = { width: "75%", background: appUtils.colors.ivoryWhite, borderRadius:'5px' };
+const FormInput = {
+  width: "70%",
+  background: appUtils.colors.ivoryWhite,
+  borderRadius: "5px",
+};
 
 const FormButton = styled.button`
+  position: relative;
+  left: 10%;
   background: ${appUtils.colors.bluePrimary};
-  margin-top: 1rem;
   color: ${appUtils.colors.ivoryWhite};
   padding: 0.5rem 1rem;
   border-radius: 20px;
   cursor: pointer;
   border: none;
+  width: 80%;
+  margin-top: 5%;
 `;
 
 const FormTitle = styled.h2`
@@ -30,12 +38,13 @@ const FormSection = styled.div`
   align-items: center;
 `;
 
-const FormInstructions = styled.div<{isError:boolean}>`
+const FormInstructions = styled.div<{ isError: boolean }>`
   text-align: center;
   height: unset;
   font-size: small;
-  color: ${props=>props.isError? appUtils.colors.darkRed : appUtils.colors.darkBlue};
-`
+  color: ${(props) =>
+    props.isError ? appUtils.colors.darkRed : appUtils.colors.darkBlue};
+`;
 
 const Styled = {
   Form,
@@ -43,6 +52,6 @@ const Styled = {
   FormButton,
   FormTitle,
   FormSection,
-  FormInstructions
+  FormInstructions,
 };
 export default Styled;
