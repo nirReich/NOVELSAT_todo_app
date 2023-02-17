@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import TaskCard from "../components/card/TaskCard";
 import GridBox from "../layout/gridBox/GridBox";
-import AddTaskIcon from "@mui/icons-material/AddTask";
 import FilterBox from "../layout/filterBox/FilterBox";
+import EmptyTasksMassage from "../components/EmptyTasksMassege";
+import {debounce} from "lodash";
 
 const HomePage = () => {
   const taskItems: TodoItem[] = useSelector((state: State) => state.taskItems);
@@ -26,24 +27,23 @@ const HomePage = () => {
       });
     } else {
       return (
-        <div>
-          <AddTaskIcon fontSize="large" />
-          <h2>No Todo tasks in your list</h2>
-          <h2> Try to add some!</h2>
-        </div>
+        <EmptyTasksMassage type="tasks"/>
       );
     }
   };
 
-  const filterTaskArray = (string: string) => {
+  const filterTaskArray = debounce((string: string)=>{
     let filteredList = [...taskItems];
+   
     if (string.length) {
       filteredList = filteredList.filter((item) => {
         return item.title.toLowerCase().includes(string.toLowerCase());
       });
     }
     setTasksToShow(filteredList);
-  };
+  },500)
+  
+  
 
   return (
     <>

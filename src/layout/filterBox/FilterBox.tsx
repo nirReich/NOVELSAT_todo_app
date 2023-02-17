@@ -1,4 +1,3 @@
-import React from "react";
 import Styled from "./FilterBox.style";
 
 type Props = {

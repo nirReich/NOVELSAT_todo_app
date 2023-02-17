@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
 import TaskCard from "../components/card/TaskCard";
-import RemoveDoneIcon from '@mui/icons-material/RemoveDone';
 import GridBox from "../layout/gridBox/GridBox";
+import EmptyTasksMassage from "../components/EmptyTasksMassege";
+
 
 const Finished = () => {
   const finishedTasks = useSelector((state: State) => state.finishedTasks);
@@ -19,11 +20,7 @@ const Finished = () => {
       });
     } else {
       return (
-        <div>
-          <RemoveDoneIcon fontSize="large"/>
-          <h2>No finished Tasks yet</h2>
-          <h2> Get to work!</h2>
-        </div>
+        <EmptyTasksMassage type ="finished"/>
       );
     }
   };
