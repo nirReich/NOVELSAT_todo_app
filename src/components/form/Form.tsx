@@ -1,6 +1,6 @@
-import React, { useState, useReducer } from "react";
+import { useState, useReducer } from "react";
 import { taskActions } from "../../store";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Styled from "./Form.style";
 import TextField from "@mui/material/TextField";
 import appUtils from "../../utils";

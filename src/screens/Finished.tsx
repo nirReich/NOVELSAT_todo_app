@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import TaskCard from "../components/card/TaskCard";
 import GridBox from "../layout/gridBox/GridBox";
-import EmptyTasksMassage from "../components/EmptyTasksMassege";
+import EmptyTasksMassage from "../components/emptyTaskMassage/EmptyTasksMassege";
 
 
 const Finished = () => {

@@ -6,7 +6,7 @@ type AppUtils = {
   colors: Colors;
   NOVELSAT_LOGO: string;
   trimString: (str: string) => string;
-  initialState:TodoItem[]
+  initialState: TodoItem[];
 };
 type Colors = {
   bluePrimary: "rgb(33,150,243)";
@@ -47,12 +47,14 @@ const appUtils: AppUtils = {
   createUniqueKey: () => {
     return `${new Date().getTime()}`;
   },
-  initialState:[{
-    title: "Adding a task",
-    description: "Add a new task to your list!",
-    id: "sfdfd2334",
-    finished: false,
-  }],
+  initialState: [
+    {
+      title: "Adding a task",
+      description: "Add a new task to your list!",
+      id: "sfdfd2334",
+      finished: false,
+    },
+  ],
 
   checkTwoWordsAndLongerThanFour: (str: string): boolean => {
     let words = str.split(" ");

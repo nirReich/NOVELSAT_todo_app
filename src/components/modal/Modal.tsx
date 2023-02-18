@@ -37,9 +37,12 @@ export default function BasicModal({ children }: Props) {
       >
         <Box sx={Styled.modal}>
           <Styled.ModalContainer>
-          <Button onClick={() => dispatch(taskActions.OpenModal(false))} sx={{}}>
-            <CloseIcon />
-          </Button>
+            <Button
+              onClick={() => dispatch(taskActions.OpenModal(false))}
+              sx={{}}
+            >
+              <CloseIcon />
+            </Button>
           </Styled.ModalContainer>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             {children}
